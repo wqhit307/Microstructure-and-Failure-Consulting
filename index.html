@@ -3,184 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Microstructure & Failure Consulting — Expert Materials Engineering Solutions</title>
-  <meta name="description" content="Specialized consulting in materials characterization, failure analysis, mechanical testing, and outsourced testing management. Actionable engineering recommendations from high-level TEM/SEM interpretation."/>
+  <title>Microstructure & Failure Consulting — Advanced Materials Engineering Solutions</title>
+  <meta name="description" content="Expert materials characterization, failure analysis, mechanical testing, and outsourced testing management. High-level TEM/SEM interpretation for actionable engineering recommendations."/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: #0f1115;
-      color: #e5e7eb;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0f1a;
+      color: #d1d5db;
       line-height: 1.6;
-      overflow-x: hidden;
     }
-    
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    
+    .container { max-width: 1140px; margin:0 auto; padding:0 1.5rem; }
     header {
-      padding: 3.5rem 0 5rem;
+      padding: 4rem 0 5rem;
       text-align: center;
-      background: linear-gradient(to bottom, #0f1115, #13151a);
+      background: linear-gradient(to bottom, #0a0f1a, #0f1622);
       position: relative;
     }
-    
     header::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: url('https://thumbs.dreamstime.com/b/black-white-abstract-steel-construction-background-modern-steel-construction-background-abstract-metal-structure-black-115704065.jpg') center/cover no-repeat;
-      opacity: 0.07;
+      background: url('https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80') center/cover;
+      opacity: 0.04;
       z-index: 0;
     }
-    
     .logo {
-      font-size: 2.1rem;
+      font-size: 2.25rem;
       font-weight: 700;
-      letter-spacing: -0.03em;
-      color: #f3f4f6;
-      margin-bottom: 0.6rem;
+      color: #f1f5f9;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
     }
-    
     .tagline {
-      font-size: 1.1rem;
-      color: #9ca3af;
-      max-width: 620px;
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 680px;
       margin: 0 auto;
     }
-    
-    main {
-      padding-bottom: 6rem;
-    }
-    
-    section {
-      padding: 5rem 0;
-    }
-    
+    section { padding: 5rem 0; }
     h2 {
       font-size: 2.25rem;
       font-weight: 600;
-      margin-bottom: 1.8rem;
-      color: #f3f4f6;
+      color: #f1f5f9;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
-    
-    .highlight {
+    h3 {
+      font-size: 1.5rem;
       color: #60a5fa;
-      font-weight: 500;
+      margin: 1.8rem 0 1rem;
     }
-    
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-    
-    .service-card {
-      background: #17191f;
+    .highlight { color: #60a5fa; font-weight: 500; }
+    .service-detail {
+      background: #111827;
       border: 1px solid #1f2937;
       border-radius: 8px;
-      padding: 2.25rem;
-      transition: all 0.25s ease;
+      padding: 2rem;
+      margin: 1.5rem 0;
     }
-    
-    .service-card:hover {
-      border-color: #374151;
-      transform: translateY(-6px);
-    }
-    
-    .service-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: #93c5fd;
-    }
-    
-    .core-value {
-      text-align: center;
-      max-width: 780px;
-      margin: 4rem auto 2rem;
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: #d1d5db;
-      padding: 0 1rem;
-    }
-    
-    .strengths {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2.5rem;
-      margin-top: 3.5rem;
-    }
-    
-    .strength-item {
-      background: #11141a;
-      border: 1px solid #1e293b;
-      border-radius: 6px;
-      padding: 1.5rem 2.5rem;
-      text-align: center;
-      min-width: 260px;
-    }
-    
-    .strength-item strong {
-      display: block;
+    .list-item { margin: 0.6rem 0; padding-left: 1.5rem; position: relative; }
+    .list-item::before {
+      content: '•';
       color: #60a5fa;
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
+      position: absolute;
+      left: 0;
     }
-    
+    .case-study {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .case-img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
     .cta {
       text-align: center;
-      padding: 6rem 0 8rem;
-      background: linear-gradient(to bottom, #0f1115, #13151a);
+      padding: 6rem 0;
+      background: linear-gradient(to bottom, #0a0f1a, #111827);
     }
-    
-    .cta h2 {
-      margin-bottom: 1.5rem;
-    }
-    
     .email-link {
-      display: inline-block;
       font-size: 1.6rem;
-      font-weight: 500;
       color: #93c5fd;
       text-decoration: none;
       border-bottom: 2px solid #60a5fa;
-      padding-bottom: 0.3rem;
-      transition: all 0.2s;
+      transition: 0.2s;
     }
-    
-    .email-link:hover {
-      color: #dbeafe;
-      border-bottom-color: #93c5fd;
-    }
-    
+    .email-link:hover { color: #dbeafe; border-color: #93c5fd; }
     footer {
       text-align: center;
       padding: 3rem 0;
-      color: #6b7280;
-      font-size: 0.95rem;
-      border-top: 1px solid #1f2937;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
     }
-    
     @media (max-width: 768px) {
-      header { padding: 3rem 0 4rem; }
       h2 { font-size: 1.9rem; }
-      .logo { font-size: 1.9rem; }
+      .logo { font-size: 2rem; }
     }
   </style>
 </head>
@@ -190,73 +118,148 @@
   <div class="container">
     <div class="logo">Microstructure & Failure Consulting</div>
     <div class="tagline">
-      Expert interpretation of complex microstructures • Actionable engineering solutions for materials challenges
+      High-level TEM/SEM interpretation • Actionable engineering recommendations • Fast, confidential, end-to-end service
     </div>
   </div>
 </header>
 
 <main class="container">
 
+  <!-- Materials Characterization -->
   <section>
-    <h2>Core Services</h2>
-    
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Materials Characterization Consulting</h3>
-        <p>High-resolution TEM, SEM, EBSD, and advanced surface analysis with in-depth data interpretation tailored to your engineering needs.</p>
-      </div>
+    <h2>Materials Characterization Consulting</h2>
+    <div class="service-detail">
+      <p>We provide high-level interpretation of microstructure data to help companies understand materials behavior and make informed engineering decisions.</p>
       
-      <div class="service-card">
-        <h3>Failure Analysis</h3>
-        <p>Root-cause investigation of material and component failures — from fracture surface analysis to microstructural degradation mechanisms.</p>
-      </div>
-      
-      <div class="service-card">
-        <h3>Mechanical Testing</h3>
-        <p>Expert guidance on test selection, procedure optimization, and interpretation of tensile, fatigue, fracture toughness, and creep results.</p>
-      </div>
-      
-      <div class="service-card">
-        <h3>Outsourced Testing Management</h3>
-        <p>End-to-end coordination of complex test programs — vendor selection, scope definition, timeline control, and quality assurance.</p>
-      </div>
+      <h3>TEM Analysis</h3>
+      <ul>
+        <li class="list-item">SAED indexing</li>
+        <li class="list-item">Dislocation, twin, and defect identification</li>
+        <li class="list-item">Precipitate and phase analysis</li>
+        <li class="list-item">EDS/EELS interpretation</li>
+        <li class="list-item">Microstructure–property correlation</li>
+      </ul>
+
+      <h3>SEM / EBSD Interpretation</h3>
+      <ul>
+        <li class="list-item">Fractography</li>
+        <li class="list-item">Grain structure analysis</li>
+        <li class="list-item">Phase distribution</li>
+        <li class="list-item">Texture and orientation relationships</li>
+      </ul>
+
+      <h3>Metallography</h3>
+      <ul>
+        <li class="list-item">Microstructure evaluation</li>
+        <li class="list-item">Heat-treatment assessment</li>
+        <li class="list-item">Inclusion and defect identification</li>
+      </ul>
+
+      <h3>What you receive</h3>
+      <ul>
+        <li class="list-item">Clear, concise reports</li>
+        <li class="list-item">Engineering-focused conclusions</li>
+        <li class="list-item">Recommendations for process or material optimization</li>
+      </ul>
     </div>
   </section>
 
-  <div class="core-value">
-    <strong class="highlight">Our core strength:</strong><br>
-    Turning high-level TEM/SEM data into clear, <span class="highlight">actionable engineering recommendations</span> that solve real production and reliability problems.
-  </div>
-
+  <!-- Failure Analysis -->
   <section>
-    <h2>Why Choose Us</h2>
-    
-    <div class="strengths">
-      <div class="strength-item">
-        <strong>End-to-End Testing Management</strong>
-        <span>From test plan to final report — we handle the details</span>
-      </div>
-      <div class="strength-item">
-        <strong>Fast Turnaround</strong>
-        <span>Expedited service without compromising technical depth</span>
-      </div>
-      <div class="strength-item">
-        <strong>Strict Confidentiality</strong>
-        <span>NDAs and secure data handling standard practice</span>
-      </div>
+    <h2>Failure Analysis</h2>
+    <div class="service-detail">
+      <p>We help companies determine why materials fail — and how to prevent it.</p>
+      
+      <h3>Capabilities</h3>
+      <ul>
+        <li class="list-item">Fracture origin identification</li>
+        <li class="list-item">Fatigue and overload analysis</li>
+        <li class="list-item">Corrosion and environmental degradation</li>
+        <li class="list-item">Manufacturing defect evaluation</li>
+        <li class="list-item">Combined microstructure + mechanical performance assessment</li>
+      </ul>
+
+      <h3>Deliverables</h3>
+      <ul>
+        <li class="list-item">Root-cause analysis</li>
+        <li class="list-item">Microstructural evidence</li>
+        <li class="list-item">Mechanical data interpretation</li>
+        <li class="list-item">Corrective actions and prevention strategies</li>
+      </ul>
+
+      <p style="margin-top:1.5rem;">Our failure analysis reports are designed for engineers, managers, and quality teams who need clear answers and practical solutions.</p>
     </div>
+  </section>
+
+  <!-- Mechanical Testing -->
+  <section>
+    <h2>Mechanical Testing</h2>
+    <div class="service-detail">
+      <p>We provide mechanical testing using accredited university facilities, combined with expert interpretation.</p>
+      
+      <h3>Testing Services</h3>
+      <ul>
+        <li class="list-item">Tensile testing</li>
+        <li class="list-item">Hardness testing</li>
+        <li class="list-item">Nanoindentation</li>
+        <li class="list-item">Sample preparation and metallography</li>
+      </ul>
+
+      <h3>Why choose us</h3>
+      <ul>
+        <li class="list-item">We manage the entire workflow</li>
+        <li class="list-item">You receive both raw data and engineering interpretation</li>
+        <li class="list-item">No need to coordinate with university labs yourself</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Outsourced Testing Management -->
+  <section>
+    <h2>Outsourced Testing Management</h2>
+    <div class="service-detail">
+      <p>Many companies struggle with university or third-party labs. We handle the entire process for you.</p>
+      
+      <h3>What we do</h3>
+      <ul>
+        <li class="list-item">Design the testing plan</li>
+        <li class="list-item">Prepare and submit samples</li>
+        <li class="list-item">Coordinate with labs</li>
+        <li class="list-item">Analyze results</li>
+        <li class="list-item">Deliver a complete engineering report</li>
+      </ul>
+
+      <p style="margin-top:1.5rem;">This service saves your team time, reduces errors, and ensures you get the data you actually need.</p>
+    </div>
+  </section>
+
+  <!-- Case Study 示例 -->
+  <section>
+    <h2>Case Studies</h2>
+    <div class="case-study">
+      <h3>Example: Fatigue Failure in Aerospace Component</h3>
+      <p>A client experienced premature cracking in a high-cycle fatigue environment. We conducted SEM fractography, TEM dislocation analysis, and EBSD texture mapping.</p>
+      <p><strong>Findings:</strong> Initiation at surface inclusions + striation spacing indicated overload during service. Microstructure showed non-uniform precipitation leading to localized weakness.</p>
+      <p><strong>Recommendations:</strong> Adjust heat treatment for finer precipitates + implement inclusion control in upstream processing. Result: >3x fatigue life improvement in validation testing.</p>
+      
+      <p style="margin:2rem 0 1rem; color:#94a3b8; font-weight:500;">SEM fractography showing characteristic fatigue striations (beach marks):</p>
+      <img src="https://www.researchgate.net/publication/245481430/figure/fig4/AS:667688246460416@1536200691056/Striations-on-the-fatigue-fracture-surface.ppm" 
+           alt="SEM fatigue striations on fracture surface" class="case-img">
+    </div>
+    
+    <p style="text-align:center; color:#64748b; margin-top:2rem;">
+      More confidential case studies available upon request.
+    </p>
   </section>
 
   <section class="cta">
-    <div class="container">
-      <h2>Ready to solve your materials challenge?</h2>
-      <p style="margin-bottom: 2rem; font-size: 1.2rem; color: #9ca3af;">
-        Contact us for a confidential technical discussion
-      </p>
-      <a href="mailto:info@microstructure-failure.com" class="email-link">
-        info@microstructure-failure.com
-      </a>
-    </div>
+    <h2>Ready to address your materials challenge?</h2>
+    <p style="font-size:1.2rem; color:#94a3b8; margin:1.5rem 0;">
+      Contact us for a confidential technical discussion
+    </p>
+    <a href="mailto:info@microstructure-failure.com" class="email-link">
+      info@microstructure-failure.com
+    </a>
   </section>
 
 </main>
@@ -264,7 +267,7 @@
 <footer>
   <div class="container">
     © 2026 Microstructure & Failure Consulting — All Rights Reserved<br>
-    Specialized Materials Engineering | Failure Analysis | TEM/SEM Expert Interpretation
+    Expert TEM/SEM Interpretation • Failure Analysis • Materials Engineering Solutions
   </div>
 </footer>
 
