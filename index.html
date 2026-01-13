@@ -107,32 +107,153 @@
 
 <main class="container">
 
-  <section>
+<section>
     <h2>Our Core Services</h2>
     
     <div class="services-grid">
 
-      <!-- Materials Characterization (accordion remains) -->
+      <!-- Materials Characterization -->
       <div class="service-card" onclick="this.querySelector('.service-detail').classList.toggle('open')">
         <div class="service-header">
           <h3>Materials Characterization Consulting</h3>
           <p>High-level interpretation of microstructure data to understand materials behavior and support informed engineering decisions.</p>
         </div>
         <div class="service-detail">
-          <!-- ... (your TEM, SEM, Metallography bullets here, unchanged) -->
+          <div class="sub-title">TEM Analysis</div>
+          <ul>
+            <li class="list-item">SAED indexing</li>
+            <li class="list-item">Dislocation, twin, and defect identification</li>
+            <li class="list-item">Precipitate and phase analysis</li>
+            <li class="list-item">EDS/EELS interpretation</li>
+            <li class="list-item">Microstructure–property correlation</li>
+          </ul>
+
+          <div class="sub-title">SEM / EBSD Interpretation</div>
+          <ul>
+            <li class="list-item">Fractography</li>
+            <li class="list-item">Grain structure analysis</li>
+            <li class="list-item">Phase distribution</li>
+            <li class="list-item">Texture and orientation relationships</li>
+          </ul>
+
+          <div class="sub-title">Metallography</div>
+          <ul>
+            <li class="list-item">Microstructure evaluation</li>
+            <li class="list-item">Heat-treatment assessment</li>
+            <li class="list-item">Inclusion and defect identification</li>
+          </ul>
+
+          <div class="sub-title">What you receive</div>
+          <ul>
+            <li class="list-item">Clear, concise reports</li>
+            <li class="list-item">Engineering-focused conclusions</li>
+            <li class="list-item">Recommendations for process or material optimization</li>
+          </ul>
         </div>
       </div>
 
-      <!-- Failure Analysis, Mechanical Testing, Outsourced Management - unchanged -->
+      <!-- Failure Analysis -->
+      <div class="service-card" onclick="this.querySelector('.service-detail').classList.toggle('open')">
+        <div class="service-header">
+          <h3>Failure Analysis</h3>
+          <p>Determine why materials fail and how to prevent future occurrences with root-cause investigations.</p>
+        </div>
+        <div class="service-detail">
+          <div class="sub-title">Capabilities</div>
+          <ul>
+            <li class="list-item">Fracture origin identification</li>
+            <li class="list-item">Fatigue and overload analysis</li>
+            <li class="list-item">Corrosion and environmental degradation</li>
+            <li class="list-item">Manufacturing defect evaluation</li>
+            <li class="list-item">Combined microstructure + mechanical performance assessment</li>
+          </ul>
+
+          <div class="sub-title">Deliverables</div>
+          <ul>
+            <li class="list-item">Root-cause analysis</li>
+            <li class="list-item">Microstructural evidence</li>
+            <li class="list-item">Mechanical data interpretation</li>
+            <li class="list-item">Corrective actions and prevention strategies</li>
+          </ul>
+
+          <p style="margin-top:1.5rem;">Reports tailored for engineers, managers, and quality teams needing clear, practical solutions.</p>
+        </div>
+      </div>
+
+      <!-- Mechanical Testing -->
+      <div class="service-card" onclick="this.querySelector('.service-detail').classList.toggle('open')">
+        <div class="service-header">
+          <h3>Mechanical Testing</h3>
+          <p>Expert mechanical testing via accredited facilities, paired with in-depth engineering interpretation.</p>
+        </div>
+        <div class="service-detail">
+          <div class="sub-title">Testing Services</div>
+          <ul>
+            <li class="list-item">Tensile testing</li>
+            <li class="list-item">Hardness testing</li>
+            <li class="list-item">Nanoindentation</li>
+            <li class="list-item">Sample preparation and metallography</li>
+          </ul>
+
+          <div class="sub-title">Why choose us</div>
+          <ul>
+            <li class="list-item">We manage the entire workflow</li>
+            <li class="list-item">You receive both raw data and engineering interpretation</li>
+            <li class="list-item">No need to coordinate with university labs yourself</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Outsourced Testing Management -->
+      <div class="service-card" onclick="this.querySelector('.service-detail').classList.toggle('open')">
+        <div class="service-header">
+          <h3>Outsourced Testing Management</h3>
+          <p>Full end-to-end coordination of testing with third-party or university labs — saving you time and reducing risks.</p>
+        </div>
+        <div class="service-detail">
+          <div class="sub-title">What we do</div>
+          <ul>
+            <li class="list-item">Design the testing plan</li>
+            <li class="list-item">Prepare and submit samples</li>
+            <li class="list-item">Coordinate with labs</li>
+            <li class="list-item">Analyze results</li>
+            <li class="list-item">Deliver a complete engineering report</li>
+          </ul>
+
+          <p style="margin-top:1.5rem;">Ensures accurate, timely data without burdening your team.</p>
+        </div>
+      </div>
 
     </div>
   </section>
 
-  <!-- Case Studies, CTA, footer unchanged -->
+  <!-- Case Studies 保持原样，可继续展开 -->
+  <section>
+    <h2>Case Studies</h2>
+    <div style="text-align:center; color:#94a3b8; font-size:1.1rem;">
+      Example cases available upon request (confidential).<br>
+      Click any service card above to explore detailed capabilities.
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to address your materials challenge?</h2>
+    <p style="font-size:1.2rem; color:#94a3b8; margin:1.5rem 0;">
+      Contact us for a confidential technical discussion
+    </p>
+    <a href="mailto:info@microstructure-failure.com" class="email-link">
+      info@microstructure-failure.com
+    </a>
+  </section>
 
 </main>
 
-<!-- Rest of the body: footer, etc. copy from previous version -->
+<footer>
+  <div class="container">
+    © 2026 Microstructure & Failure Consulting — All Rights Reserved<br>
+    Expert TEM/SEM Interpretation • Failure Analysis • Materials Engineering Solutions
+  </div>
+</footer>
 
 </body>
 </html>
