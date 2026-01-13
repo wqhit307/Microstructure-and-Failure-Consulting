@@ -24,7 +24,6 @@
       padding: 5rem 0 3rem;
       text-align: center;
       background: linear-gradient(to bottom, rgba(15,22,41,0.85), rgba(22,32,56,0.7));
-      position: relative;
     }
     .logo {
       font-size: 2.5rem;
@@ -37,14 +36,14 @@
       font-weight: 500;
       color: #93c5fd;
       max-width: 700px;
-      margin: 0 auto 2rem;
+      margin: 0 auto 3rem;
     }
     .who-we-are {
       background: rgba(22, 32, 56, 0.85);
       border: 1px solid #1e293b;
       border-radius: 8px;
       padding: 2.5rem;
-      margin: 0 auto 4rem;
+      margin: 0 auto 5rem;
       max-width: 900px;
       text-align: left;
     }
@@ -54,18 +53,91 @@
       margin-bottom: 1.2rem;
       text-align: center;
     }
-    section { padding: 5rem 0; }
+    section { padding: 4rem 0; }
     h2 {
       font-size: 2.25rem;
       font-weight: 600;
       color: #f1f5f9;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
       text-align: center;
     }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+    }
+    .service-card {
+      background: rgba(22, 32, 56, 0.85);
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #60a5fa;
+      box-shadow: 0 8px 20px rgba(96,165,250,0.2);
+    }
+    .service-header {
+      padding: 2rem;
+      background: linear-gradient(to right, #1e293b, #111827);
+    }
+    .service-header h3 {
+      font-size: 1.6rem;
+      color: #60a5fa;
+      margin-bottom: 0.6rem;
+    }
+    .service-header p {
+      color: #94a3b8;
+      font-size: 1rem;
+    }
+    .service-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.4s ease;
+      padding: 0 2rem;
+      background: #111827;
+    }
+    .service-detail.open {
+      max-height: 2000px; /* Large enough for your content; adjust if needed */
+      padding: 2rem;
+    }
+    .sub-title {
+      font-size: 1.3rem;
+      color: #93c5fd;
+      margin: 1.5rem 0 0.8rem;
+    }
+    ul { list-style: none; padding-left: 0; }
+    .list-item {
+      margin: 0.6rem 0;
+      padding-left: 1.8rem;
+      position: relative;
+    }
+    .list-item::before {
+      content: '→';
+      color: #60a5fa;
+      position: absolute;
+      left: 0;
+    }
+    .cta {
+      text-align: center;
+      padding: 6rem 0;
+      background: linear-gradient(to bottom, #0f1629, #162038);
+    }
+    .email-link {
+      font-size: 1.6rem;
+      color: #93c5fd;
+      text-decoration: none;
+      border-bottom: 2px solid #60a5fa;
+      transition: 0.2s;
+    }
+    .email-link:hover { color: #dbeafe; border-color: #93c5fd; }
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
     }
     @media (max-width: 768px) {
       .services-grid { grid-template-columns: 1fr; }
@@ -79,11 +151,20 @@
 <header>
   <div class="container">
     <div class="logo">Microstructure & Failure Consulting</div>
-    <div class="tagline">
-      High-level TEM/SEM interpretation • Actionable engineering recommendations • Fast, confidential, end-to-end service
+    <div class="new-tagline">
+      Turning materials data into engineering decisions.
     </div>
   </div>
 </header>
+
+<section class="who-we-are">
+  <h2>Who We Are</h2>
+  <p>Microstructure & Failure Consulting is led by Qiang, a materials engineer with extensive hands-on experience in advanced microstructure characterization using TEM and SEM, gained from working in a high-stakes nuclear laboratory environment in Belleville, Ontario.</p>
+  
+  <p>With years of expertise in interpreting complex TEM/SEM data, identifying defects, phase transformations, and microstructure-property relationships, we bridge the gap between raw analytical results and practical engineering solutions. Our focus is on delivering clear, actionable recommendations that help clients optimize materials performance, prevent failures, and improve reliability in demanding applications.</p>
+  
+  <p>We work with a small, trusted network of collaborators and accredited testing partners to ensure fast turnaround, strict confidentiality, and end-to-end project management — all while maintaining the highest standards of technical rigor and integrity.</p>
+</section>
 
 <main class="container">
 
@@ -107,7 +188,6 @@
             <li class="list-item">EDS/EELS interpretation</li>
             <li class="list-item">Microstructure–property correlation</li>
           </ul>
-
           <div class="sub-title">SEM / EBSD Interpretation</div>
           <ul>
             <li class="list-item">Fractography</li>
@@ -115,14 +195,12 @@
             <li class="list-item">Phase distribution</li>
             <li class="list-item">Texture and orientation relationships</li>
           </ul>
-
           <div class="sub-title">Metallography</div>
           <ul>
             <li class="list-item">Microstructure evaluation</li>
             <li class="list-item">Heat-treatment assessment</li>
             <li class="list-item">Inclusion and defect identification</li>
           </ul>
-
           <div class="sub-title">What you receive</div>
           <ul>
             <li class="list-item">Clear, concise reports</li>
@@ -147,7 +225,6 @@
             <li class="list-item">Manufacturing defect evaluation</li>
             <li class="list-item">Combined microstructure + mechanical performance assessment</li>
           </ul>
-
           <div class="sub-title">Deliverables</div>
           <ul>
             <li class="list-item">Root-cause analysis</li>
@@ -155,7 +232,6 @@
             <li class="list-item">Mechanical data interpretation</li>
             <li class="list-item">Corrective actions and prevention strategies</li>
           </ul>
-
           <p style="margin-top:1.5rem;">Reports tailored for engineers, managers, and quality teams needing clear, practical solutions.</p>
         </div>
       </div>
