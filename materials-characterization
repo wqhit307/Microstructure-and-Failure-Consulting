@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materials Characterization - Materials Lab</title>
+  <link rel="stylesheet" href="style.css"> <!-- 如果想统一样式，可把上面 style 抽成 style.css -->
+  <style>
+    /* 复用主页样式，或直接内联 */
+    body { background:#0b1324; color:#e2e8f0; font-family:'Inter',sans-serif; padding:2rem; }
+    .container { max-width:1000px; margin:0 auto; }
+    h1 { color:#60a5fa; font-size:3rem; text-align:center; margin:4rem 0 2rem; }
+    .back { display:block; text-align:center; margin:3rem 0; font-size:1.4rem; }
+    .back a { color:#93c5fd; text-decoration:none; }
+    .image-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; margin:3rem 0; }
+    .image-gallery img { width:100%; border-radius:8px; border:1px solid #334155; }
+    .placeholder { background:#1e293b; height:300px; display:flex; align-items:center; justify-content:center; color:#64748b; font-size:1.2rem; border-radius:8px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Materials Characterization</h1>
+  
+  <p>High-level interpretation of microstructure data using TEM, SEM, and other advanced techniques to understand material behavior and support informed engineering decisions.</p>
+  
+  <h2>Key Capabilities</h2>
+  <ul>
+    <li>TEM Analysis: SAED indexing, dislocation/twin/defect identification, precipitate/phase analysis, EDS/EELS, microstructure-property correlation</li>
+    <li>SEM/EBSD: Fractography, grain structure, phase distribution, texture/orientation</li>
+    <li>Metallography: Evaluation, heat-treatment assessment, inclusion/defect ID</li>
+  </ul>
+  
+  <h2>Visual Examples</h2>
+  <div class="image-gallery">
+    <!-- 放 3-4 张照片的位置 -->
+    <div class="placeholder">Photo 1: TEM microstructure image (replace src later)</div>
+    <div class="placeholder">Photo 2: SEM fractography example</div>
+    <div class="placeholder">Photo 3: EBSD grain map</div>
+    <div class="placeholder">Photo 4: Phase distribution visualization</div>
+  </div>
+  
+  <div class="back">
+    <a href="index.html">← Back to Home</a>
+  </div>
+</div>
+
+</body>
+</html>
