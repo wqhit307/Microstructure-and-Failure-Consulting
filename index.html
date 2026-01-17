@@ -12,14 +12,20 @@
   
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Inter', system-ui, sans-serif; background:#0b1324; color:#e2e8f0; line-height:1.6; }
+    body { 
+      font-family: 'Inter', system-ui, sans-serif; 
+      background:#0b1324; 
+      color:#e2e8f0; 
+      line-height:1.6; 
+      scroll-behavior: smooth;
+    }
     .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
     
     /* 导航栏 */
     nav {
       position: fixed;
       top:0; left:0; right:0;
-      background:rgba(11,19,36,0.9);
+      background:rgba(11,19,36,0.92);
       backdrop-filter: blur(10px);
       z-index:1000;
       padding:1rem 0;
@@ -29,11 +35,17 @@
       display:flex; justify-content:space-between; align-items:center;
     }
     nav .logo { font-size:1.8rem; font-weight:900; color:#60a5fa; }
-    nav ul { list-style:none; display:flex; gap:2.5rem; }
-    nav a { color:#cbd5e1; text-decoration:none; font-weight:500; transition:0.3s; }
+    nav ul { list-style:none; display:flex; gap:2.8rem; }
+    nav a { 
+      color:#cbd5e1; 
+      text-decoration:none; 
+      font-weight:500; 
+      transition:0.3s; 
+      cursor:pointer;
+    }
     nav a:hover { color:#93c5fd; }
     
-    /* Hero 大标题 */
+    /* Hero */
     header {
       padding:12rem 0 8rem;
       text-align:center;
@@ -42,14 +54,47 @@
     .main-title { font-size:5.5rem; font-weight:900; color:#60a5fa; letter-spacing:-0.04em; margin-bottom:1rem; }
     .subtitle { font-size:2.2rem; font-weight:500; color:#93c5fd; max-width:900px; margin:0 auto; }
     
-    /* Section padding */
     section { padding:8rem 0; min-height:100vh; }
     h2 { font-size:3.2rem; font-weight:700; color:#f1f5f9; text-align:center; margin-bottom:3rem; }
     
     /* Who We Are */
     #who-we-are { background:rgba(20,35,60,0.7); border-radius:12px; padding:4rem; }
     
-    /* Case Studies & Contact placeholder */
+    /* Core Services 展开部分 */
+    #core-services { 
+      background:rgba(11,19,36,0.8); 
+      border-radius:12px; 
+      padding:4rem 3rem; 
+      margin:4rem 0;
+    }
+    .service-list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease;
+      margin-top: 2rem;
+    }
+    .service-list.open {
+      max-height: 1200px; /* 根据内容调整 */
+    }
+    .service-item {
+      font-size:1.5rem;
+      margin:1.5rem 0;
+      padding:1rem 1.5rem;
+      background:rgba(20,35,60,0.6);
+      border-radius:8px;
+      transition: all 0.3s;
+    }
+    .service-item:hover {
+      background:rgba(96,165,250,0.15);
+      transform: translateX(8px);
+    }
+    .service-item a {
+      color:#93c5fd;
+      text-decoration:none;
+      display:block;
+    }
+    
+    /* Case & Contact */
     #case-studies, #contact { text-align:center; }
     
     footer {
@@ -70,7 +115,7 @@
     <div class="logo">Materials Lab</div>
     <ul>
       <li><a href="#who-we-are">Who We Are</a></li>
-      <li><a href="#core-services">Core Services</a></li>
+      <li><a onclick="document.getElementById('service-list').classList.toggle('open'); document.getElementById('core-services').scrollIntoView({behavior: 'smooth'})">Core Services</a></li>
       <li><a href="#case-studies">Case Studies</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
@@ -94,26 +139,29 @@
 
   <section id="core-services">
     <h2>Core Services</h2>
-    <div style="text-align:center; font-size:1.3rem; color:#93c5fd; margin:2rem 0;">
-      Hover or click to explore:
-    </div>
+    <p style="text-align:center; font-size:1.3rem; color:#cbd5e1; margin-bottom:2rem;">
+      点击上方“Core Services”展开子服务列表，点击具体服务查看详细内容（新页面）
+    </p>
     
-    <div style="max-width:800px; margin:0 auto; background:rgba(20,35,60,0.7); border-radius:12px; padding:2rem;">
-      <details style="margin:1.5rem 0;">
-        <summary style="font-size:1.6rem; color:#60a5fa; cursor:pointer; font-weight:600;">Core Services Menu</summary>
-        <ul style="list-style:none; padding:1.5rem 0 0 2rem; font-size:1.3rem;">
-          <li style="margin:1rem 0;"><a href="materials-characterization.html" target="_blank" style="color:#93c5fd; text-decoration:none;">Materials Characterization</a></li>
-          <li style="margin:1rem 0;"><a href="failure-analysis.html" target="_blank" style="color:#93c5fd; text-decoration:none;">Failure Analysis</a></li>
-          <li style="margin:1rem 0;"><a href="mechanical-testing.html" target="_blank" style="color:#93c5fd; text-decoration:none;">Mechanical Testing</a></li>
-          <li style="margin:1rem 0;"><a href="ai-tools-development.html" target="_blank" style="color:#93c5fd; text-decoration:none;">AI Tools Development</a></li>
-        </ul>
-      </details>
+    <div id="service-list" class="service-list">
+      <div class="service-item">
+        <a href="materials-characterization.html" target="_blank">Materials Characterization</a>
+      </div>
+      <div class="service-item">
+        <a href="failure-analysis.html" target="_blank">Failure Analysis</a>
+      </div>
+      <div class="service-item">
+        <a href="mechanical-testing.html" target="_blank">Mechanical Testing</a>
+      </div>
+      <div class="service-item">
+        <a href="ai-tools-development.html" target="_blank">AI Tools Development</a>
+      </div>
     </div>
   </section>
 
   <section id="case-studies">
     <h2>Case Studies</h2>
-    <p style="text-align:center; font-size:1.4rem; color:#cbd5e1;">Confidential case studies and examples available upon request.<br>Contact us for detailed discussions.</p>
+    <p style="font-size:1.4rem; color:#cbd5e1;">Confidential case studies and examples available upon request.<br>Contact us for detailed discussions.</p>
   </section>
 
   <section id="contact" class="cta">
@@ -121,7 +169,7 @@
     <p style="font-size:1.6rem; color:#93c5fd; margin:2rem 0;">
       Ready to turn your materials data into actionable decisions?
     </p>
-    <a href="mailto:info@materialslab.ca" style="font-size:2.2rem; color:#93c5fd; text-decoration:none; border-bottom:3px solid #60a5fa; padding-bottom:0.3rem;">
+    <a href="mailto:info@materialslab.ca" style="font-size:2.2rem; color:#93c5fd; text-decoration:none; border-bottom:3px solid #60a5fa;">
       info@materialslab.ca
     </a>
   </section>
