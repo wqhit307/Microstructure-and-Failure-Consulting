@@ -3,300 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Materials Microstructure & Failure Consulting — Advanced Materials Engineering Solutions</title>
-  <meta name="description" content="Expert materials characterization, failure analysis, mechanical testing, and outsourced testing management. High-level TEM/SEM interpretation for actionable engineering recommendations."/>
+  <title>Materials Lab — Turning Materials Data into Engineering Decisions</title>
+  <meta name="description" content="Advanced materials characterization, failure analysis, mechanical testing, and AI-driven tools. Expert TEM/SEM interpretation for engineering solutions."/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #0f1629 url('https://www.shutterstock.com/image-illustration/abstract-dark-blue-geometric-background-260nw-2637708419.jpg') center/cover no-repeat fixed;
-      background-blend-mode: overlay;
-      color: #d1d5db;
-      line-height: 1.6;
+    body { font-family: 'Inter', system-ui, sans-serif; background:#0b1324; color:#e2e8f0; line-height:1.6; }
+    .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+    
+    /* 导航栏 */
+    nav {
+      position: fixed;
+      top:0; left:0; right:0;
+      background:rgba(11,19,36,0.9);
+      backdrop-filter: blur(10px);
+      z-index:1000;
+      padding:1rem 0;
+      border-bottom:1px solid #334155;
     }
-    .container { max-width: 1140px; margin:0 auto; padding:0 1.5rem; }
+    nav .container {
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    nav .logo { font-size:1.8rem; font-weight:900; color:#60a5fa; }
+    nav ul { list-style:none; display:flex; gap:2.5rem; }
+    nav a { color:#cbd5e1; text-decoration:none; font-weight:500; transition:0.3s; }
+    nav a:hover { color:#93c5fd; }
+    
+    /* Hero 大标题 */
     header {
-      padding: 5rem 0 3rem;
-      text-align: center;
-      background: linear-gradient(to bottom, rgba(15,22,41,0.85), rgba(22,32,56,0.7));
+      padding:12rem 0 8rem;
+      text-align:center;
+      background:linear-gradient(to bottom, rgba(11,19,36,0.95), #0b1324);
     }
-    .logo {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 0.8rem;
-    }
-    .new-tagline {
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: #93c5fd;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-    }
-    .who-we-are {
-      background: rgba(22, 32, 56, 0.85);
-      border: 1px solid #1e293b;
-      border-radius: 8px;
-      padding: 2.5rem;
-      margin: 0 auto 5rem;
-      max-width: 900px;
-      text-align: left;
-    }
-    .who-we-are h2 {
-      font-size: 1.8rem;
-      color: #60a5fa;
-      margin-bottom: 1.2rem;
-      text-align: center;
-    }
-    section { padding: 4rem 0; }
-    h2 {
-      font-size: 2.25rem;
-      font-weight: 600;
-      color: #f1f5f9;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-    .service-card {
-      background: rgba(22, 32, 56, 0.85);
-      border: 1px solid #1e293b;
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: #60a5fa;
-      box-shadow: 0 8px 20px rgba(96,165,250,0.2);
-    }
-    .service-header {
-      padding: 2rem;
-      background: linear-gradient(to right, #1e293b, #111827);
-    }
-    .service-header h3 {
-      font-size: 1.6rem;
-      color: #60a5fa;
-      margin-bottom: 0.6rem;
-    }
-    .service-header p {
-      color: #94a3b8;
-      font-size: 1rem;
-    }
-    .service-detail {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.4s ease;
-      padding: 0 2rem;
-      background: #111827;
-    }
-    .service-detail.open {
-      max-height: 2000px; /* Large enough for your content; adjust if needed */
-      padding: 2rem;
-    }
-    .sub-title {
-      font-size: 1.3rem;
-      color: #93c5fd;
-      margin: 1.5rem 0 0.8rem;
-    }
-    ul { list-style: none; padding-left: 0; }
-    .list-item {
-      margin: 0.6rem 0;
-      padding-left: 1.8rem;
-      position: relative;
-    }
-    .list-item::before {
-      content: '→';
-      color: #60a5fa;
-      position: absolute;
-      left: 0;
-    }
-    .cta {
-      text-align: center;
-      padding: 6rem 0;
-      background: linear-gradient(to bottom, #0f1629, #162038);
-    }
-    .email-link {
-      font-size: 1.6rem;
-      color: #93c5fd;
-      text-decoration: none;
-      border-bottom: 2px solid #60a5fa;
-      transition: 0.2s;
-    }
-    .email-link:hover { color: #dbeafe; border-color: #93c5fd; }
+    .main-title { font-size:5.5rem; font-weight:900; color:#60a5fa; letter-spacing:-0.04em; margin-bottom:1rem; }
+    .subtitle { font-size:2.2rem; font-weight:500; color:#93c5fd; max-width:900px; margin:0 auto; }
+    
+    /* Section padding */
+    section { padding:8rem 0; min-height:100vh; }
+    h2 { font-size:3.2rem; font-weight:700; color:#f1f5f9; text-align:center; margin-bottom:3rem; }
+    
+    /* Who We Are */
+    #who-we-are { background:rgba(20,35,60,0.7); border-radius:12px; padding:4rem; }
+    
+    /* Case Studies & Contact placeholder */
+    #case-studies, #contact { text-align:center; }
+    
     footer {
-      text-align: center;
-      padding: 3rem 0;
-      color: #64748b;
-      border-top: 1px solid #1e293b;
+      text-align:center; padding:4rem 0; color:#64748b; border-top:1px solid #1e293b;
     }
-    @media (max-width: 768px) {
-      .services-grid { grid-template-columns: 1fr; }
-      h2 { font-size: 1.9rem; }
-      .logo { font-size: 2.2rem; }
+    
+    @media (max-width:992px) {
+      .main-title { font-size:4rem; }
+      .subtitle { font-size:1.8rem; }
+      nav ul { gap:1.5rem; flex-wrap:wrap; justify-content:center; }
     }
   </style>
 </head>
 <body>
 
+<nav>
+  <div class="container">
+    <div class="logo">Materials Lab</div>
+    <ul>
+      <li><a href="#who-we-are">Who We Are</a></li>
+      <li><a href="#core-services">Core Services</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
 <header>
   <div class="container">
-    <div class="logo">Materials Microstructure & Failure Consulting</div>
-    <div class="new-tagline">
-      Turning materials data into engineering decisions.
-    </div>
+    <div class="main-title">Materials Lab</div>
+    <div class="subtitle">Turning materials data into engineering decisions.</div>
   </div>
 </header>
 
-<section class="who-we-are">
-  <h2>Who We Are</h2>
-  <p>Materials Microstructure & Failure Consulting is a team that has more than a decade of expertise in interpreting complex TEM/SEM data, identifying defects, phase transformations, and microstructure-property relationships, we bridge the gap between raw analytical results and practical engineering solutions. Our focus is on delivering clear, actionable recommendations that help clients optimize materials performance, prevent failures, and improve reliability in demanding applications.</p>
-  
-  <p>We work with a small, trusted network of collaborators and accredited testing partners to ensure fast turnaround, strict confidentiality, and end-to-end project management — all while maintaining the highest standards of technical rigor and integrity.</p>
-</section>
-
 <main class="container">
 
-  <section>
-    <h2>Our Core Services</h2>
+  <section id="who-we-are">
+    <h2>Who We Are</h2>
+    <p>Materials Lab is a specialized consulting firm focused on advanced materials characterization and engineering solutions. Led by experienced materials engineers with expertise in TEM/SEM analysis from high-stakes laboratory environments, we bridge raw data and practical decisions.</p>
+    <p>We deliver fast, confidential, end-to-end services across industries, combining traditional techniques with emerging AI tools for microstructure insight.</p>
+  </section>
+
+  <section id="core-services">
+    <h2>Core Services</h2>
+    <div style="text-align:center; font-size:1.3rem; color:#93c5fd; margin:2rem 0;">
+      Hover or click to explore:
+    </div>
     
-    <div class="services-grid">
-
-      <!-- Materials Characterization -->
-      <div class="service-card" onclick="this.querySelector('.service-detail').classList.toggle('open')">
-        <div class="service-header">
-          <h3>Materials Characterization Consulting</h3>
-          <p>High-level interpretation of microstructure data to understand materials behavior and support informed engineering decisions.</p>
-        </div>
-        <div class="service-detail">
-          <div class="sub-title">TEM Analysis</div>
-          <ul>
-            <li class="list-item">SAED indexing</li>
-            <li class="list-item">Dislocation, twin, and defect identification</li>
-            <li class="list-item">Precipitate and phase analysis</li>
-            <li class="list-item">EDS/EELS interpretation</li>
-            <li class="list-item">Microstructure–property correlation</li>
-          </ul>
-          <div class="sub-title">SEM / EBSD Interpretation</div>
-          <ul>
-            <li class="list-item">Fractography</li>
-            <li class="list-item">Grain structure analysis</li>
-            <li class="list-item">Phase distribution</li>
-            <li class="list-item">Texture and orientation relationships</li>
-          </ul>
-          <div class="sub-title">Metallography</div>
-          <ul>
-            <li class="list-item">Microstructure evaluation</li>
-            <li class="list-item">Heat-treatment assessment</li>
-            <li class="list-item">Inclusion and defect identification</li>
-          </ul>
-          <div class="sub-title">What you receive</div>
-          <ul>
-            <li class="list-item">Clear, concise reports</li>
-            <li class="list-item">Engineering-focused conclusions</li>
-            <li class="list-item">Recommendations for process or material optimization</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Failure Analysis -->
-      <div class="service-card" onclick="this.querySelector('.service-detail').classList.toggle('open')">
-        <div class="service-header">
-          <h3>Failure Analysis</h3>
-          <p>Determine why materials fail and how to prevent future occurrences with root-cause investigations.</p>
-        </div>
-        <div class="service-detail">
-          <div class="sub-title">Capabilities</div>
-          <ul>
-            <li class="list-item">Fracture origin identification</li>
-            <li class="list-item">Fatigue and overload analysis</li>
-            <li class="list-item">Corrosion and environmental degradation</li>
-            <li class="list-item">Manufacturing defect evaluation</li>
-            <li class="list-item">Combined microstructure + mechanical performance assessment</li>
-          </ul>
-          <div class="sub-title">Deliverables</div>
-          <ul>
-            <li class="list-item">Root-cause analysis</li>
-            <li class="list-item">Microstructural evidence</li>
-            <li class="list-item">Mechanical data interpretation</li>
-            <li class="list-item">Corrective actions and prevention strategies</li>
-          </ul>
-          <p style="margin-top:1.5rem;">Reports tailored for engineers, managers, and quality teams needing clear, practical solutions.</p>
-        </div>
-      </div>
-
-      <!-- Mechanical Testing -->
-      <div class="service-card" onclick="this.querySelector('.service-detail').classList.toggle('open')">
-        <div class="service-header">
-          <h3>Mechanical Testing</h3>
-          <p>Expert mechanical testing via accredited facilities, paired with in-depth engineering interpretation.</p>
-        </div>
-        <div class="service-detail">
-          <div class="sub-title">Testing Services</div>
-          <ul>
-            <li class="list-item">Tensile testing</li>
-            <li class="list-item">Hardness testing</li>
-            <li class="list-item">Nanoindentation</li>
-            <li class="list-item">Sample preparation and metallography</li>
-          </ul>
-
-          <div class="sub-title">Why choose us</div>
-          <ul>
-            <li class="list-item">We manage the entire workflow</li>
-            <li class="list-item">You receive both raw data and engineering interpretation</li>
-            <li class="list-item">No need to coordinate with university labs yourself</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- AI tools development for your applications  -->
-      <div class="service-card" onclick="this.querySelector('.service-detail').classList.toggle('open')">
-        <div class="service-header">
-          <h3>AI tools development</h3>
-          <p>Capability of developping Artificial Intelligence (AI) assisted tools for our customers direct needs. </p>
-        </div>
-        <div class="service-detail">
-          <div class="sub-title">What we do</div>
-          <ul>
-            <li class="list-item">Understand the needs</li>
-            <li class="list-item">Decide the right tools</li>
-            <li class="list-item">Design the AI applicaitons</li>
-            <li class="list-item">Analyze results</li>
-            <li class="list-item">Deliver a complete engineering report</li>
-          </ul>
-
-          <p style="margin-top:1.5rem;">Ensures precise and intenlligent applications to help your team.</p>
-        </div>
-      </div>
-
+    <div style="max-width:800px; margin:0 auto; background:rgba(20,35,60,0.7); border-radius:12px; padding:2rem;">
+      <details style="margin:1.5rem 0;">
+        <summary style="font-size:1.6rem; color:#60a5fa; cursor:pointer; font-weight:600;">Core Services Menu</summary>
+        <ul style="list-style:none; padding:1.5rem 0 0 2rem; font-size:1.3rem;">
+          <li style="margin:1rem 0;"><a href="materials-characterization.html" target="_blank" style="color:#93c5fd; text-decoration:none;">Materials Characterization</a></li>
+          <li style="margin:1rem 0;"><a href="failure-analysis.html" target="_blank" style="color:#93c5fd; text-decoration:none;">Failure Analysis</a></li>
+          <li style="margin:1rem 0;"><a href="mechanical-testing.html" target="_blank" style="color:#93c5fd; text-decoration:none;">Mechanical Testing</a></li>
+          <li style="margin:1rem 0;"><a href="ai-tools-development.html" target="_blank" style="color:#93c5fd; text-decoration:none;">AI Tools Development</a></li>
+        </ul>
+      </details>
     </div>
   </section>
 
-  <!-- Case Studies 保持原样，可继续展开 -->
-  <section>
+  <section id="case-studies">
     <h2>Case Studies</h2>
-    <div style="text-align:center; color:#94a3b8; font-size:1.1rem;">
-      Example cases available upon request (confidential).<br>
-      Click any service card above to explore detailed capabilities.
-    </div>
+    <p style="text-align:center; font-size:1.4rem; color:#cbd5e1;">Confidential case studies and examples available upon request.<br>Contact us for detailed discussions.</p>
   </section>
 
-  <section class="cta">
-    <h2>Ready to address your materials challenge?</h2>
-    <p style="font-size:1.2rem; color:#94a3b8; margin:1.5rem 0;">
-      Contact us for a confidential technical discussion
+  <section id="contact" class="cta">
+    <h2>Contact Us</h2>
+    <p style="font-size:1.6rem; color:#93c5fd; margin:2rem 0;">
+      Ready to turn your materials data into actionable decisions?
     </p>
-    <a href="mailto:info@microstructure-failure.com" class="email-link">
-      info@microstructure-failure.com
+    <a href="mailto:info@materialslab.ca" style="font-size:2.2rem; color:#93c5fd; text-decoration:none; border-bottom:3px solid #60a5fa; padding-bottom:0.3rem;">
+      info@materialslab.ca
     </a>
   </section>
 
@@ -304,8 +130,8 @@
 
 <footer>
   <div class="container">
-    © 2026 Microstructure & Failure Consulting — All Rights Reserved<br>
-    Expert TEM/SEM Interpretation • Failure Analysis • Materials Engineering Solutions
+    © 2026 Materials Lab — All Rights Reserved<br>
+    Advanced Materials Solutions • TEM/SEM Expertise • AI-Enhanced Analysis
   </div>
 </footer>
 
