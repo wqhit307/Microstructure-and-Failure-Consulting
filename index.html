@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Materials Lab — Turning Materials Data into Engineering Decisions</title>
-  <meta name="description" content="Advanced materials characterization, failure analysis, mechanical testing, and AI-driven tools."/>
+  <title>Metallite Insights — Turning Materials Data into Engineering Decisions</title>
+  <meta name="description" content="Specialized consulting in metal microstructure characterization, failure analysis, mechanical testing, and outsourced testing management. Expert TEM/SEM interpretation for actionable engineering solutions."/>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
     }
     .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
 
+    /* 导航栏 - Kinectrics 风格 */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -42,9 +43,10 @@
       height: 80px;
     }
     nav .logo {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 900;
       color: #60a5fa;
+      letter-spacing: -0.02em;
     }
     nav .nav-menu {
       display: flex;
@@ -79,11 +81,12 @@
       width: 100%;
     }
 
-    /* Dropdown */
+    /* Dropdown - 优化 hover 敏感度 */
     .dropdown {
       position: relative;
     }
     .dropdown-content {
+      display: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -94,14 +97,15 @@
       overflow: hidden;
       backdrop-filter: blur(8px);
       border: 1px solid #334155;
-      margin-top: 8px;
-      transition: opacity 0.2s ease, visibility 0.2s ease;
+      margin-top: -4px; /* 桥接间隙，防消失 */
+      padding-top: 12px; /* 增加鼠标移动空间 */
+      transition: opacity 0.25s ease, visibility 0.25s ease;
       opacity: 0;
       visibility: hidden;
-      pointer-events: none; /* prevents accidental clicks while hidden */
+      pointer-events: none;
     }
-    .dropdown:hover .dropdown-content，
-    .dropdown-content:hover {   /* ← Key line! Allow hovering the dropdown itself */{
+    .dropdown:hover .dropdown-content,
+    .dropdown-content:hover {  /* 关键：允许 hover 下拉本身保持打开 */
       display: block;
       opacity: 1;
       visibility: visible;
@@ -121,7 +125,7 @@
       padding-left: 2rem;
     }
 
-    /* Hamburger */
+    /* 汉堡菜单 */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -165,6 +169,7 @@
       }
     }
 
+    /* Hero */
     header {
       padding: 12rem 0 8rem;
       text-align: center;
@@ -193,7 +198,7 @@
 
 <nav>
   <div class="container">
-    <div class="logo">Materials Lab</div>
+    <div class="logo">Metallite</div>
     
     <ul class="nav-menu">
       <li><a href="#who-we-are">Who We Are</a></li>
@@ -220,7 +225,7 @@
 
 <header>
   <div class="container">
-    <div class="main-title">Materials Lab</div>
+    <div class="main-title">Metallite</div>
     <div class="subtitle">Turning materials data into engineering decisions.</div>
   </div>
 </header>
@@ -228,54 +233,59 @@
 <main class="container">
   <section id="who-we-are">
     <h2>Who We Are</h2>
-    <p>Materials Lab is a specialized consulting firm focused on advanced materials characterization and engineering solutions...</p>
-    <!-- your full content here -->
+    <p>Metallite is a specialized consulting firm dedicated to advanced metal microstructure characterization and engineering solutions. Led by experienced materials engineers with expertise in TEM/SEM analysis from high-stakes laboratory environments, we focus exclusively on metals and alloys to bridge raw microscopic data and practical engineering decisions.</p>
+    <p>We deliver fast, confidential, end-to-end services for metal-related challenges, combining traditional techniques with emerging AI tools for deeper microstructure insights.</p>
   </section>
 
   <section id="core-services">
     <h2>Core Services</h2>
-    <p style="text-align:center; color:#93c5fd;">Hover over 'Core Services' in the top menu to see options</p>
-    <!-- You can keep or remove the expandable list below if you prefer only the dropdown -->
+    <p style="text-align:center; color:#93c5fd; font-size:1.3rem;">Hover over 'Core Services' in the top menu to explore our specialized metal services</p>
   </section>
 
   <section id="case-studies">
     <h2>Case Studies</h2>
-    <p>...</p>
+    <p style="text-align:center; font-size:1.4rem; color:#cbd5e1;">Confidential case studies in metal failure analysis and microstructure optimization available upon request.</p>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>...</p>
-    <a href="mailto:info@materialslab.ca">info@materialslab.ca</a>
+    <p style="font-size:1.6rem; color:#93c5fd; margin:2rem 0; text-align:center;">
+      Ready to unlock insights from your metal materials?
+    </p>
+    <a href="mailto:info@metallite.ca" style="font-size:2.2rem; color:#93c5fd; text-decoration:none; border-bottom:3px solid #60a5fa; display:block; text-align:center;">
+      info@metallite.ca
+    </a>
   </section>
 </main>
 
+<footer>
+  <div class="container">
+    © 2026 Metallite Insights — All Rights Reserved<br>
+    Specialized Metal Microstructure Analysis • Failure Investigation • Engineering Solutions
+  </div>
+</footer>
+
 <script>
-// Scroll shadow
-window.addEventListener('scroll', () => {
-  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
-});
-
-// Highlight active section in nav
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute('id');
-    }
+  // Scroll shadow
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 50);
   });
-  
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
+
+  // Active link highlight (optional enhancement)
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (scrollY >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+    });
   });
-});
 </script>
 
 </body>
