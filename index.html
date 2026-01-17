@@ -84,7 +84,6 @@
       position: relative;
     }
     .dropdown-content {
-      display: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -96,9 +95,17 @@
       backdrop-filter: blur(8px);
       border: 1px solid #334155;
       margin-top: 8px;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none; /* prevents accidental clicks while hidden */
     }
-    .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content，
+    .dropdown-content:hover {   /* ← Key line! Allow hovering the dropdown itself */{
       display: block;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
     .dropdown-content a {
       color: #cbd5e1;
